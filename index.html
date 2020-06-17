@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Uber Rides Prediction Model</title>
+       
+    </head>
+    <center>
+    <body>
+        {{a}}
+        <h1>Uber Weekly Rides Analysis</h1>
+        <form method="post" action="predictweeklyparking">
+            {% csrf_token %}
+            <input type="text" name="Priceperweek" placeholder="Priceperweek" required="required"><br>
+            <input type="text" name="Population" placeholder="Population" required="required"><br>
+            <input type="text" name="Monthlyincome" placeholder="Monthlyincome" required="required"><br>
+            <input type="text" name="Averageparkingpermonth" placeholder="Averageparkingpermonth" required="required"><br>
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button><br>
+        </form>
+        <br>
+        {% if predvalue %}
+        <h1>cost of parking everyweek is:{{predvalue}}</h1>
+         {%endif%} 
+    </body>
+    </center>
+</html>
